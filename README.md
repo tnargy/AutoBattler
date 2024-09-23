@@ -1,7 +1,7 @@
 # Godot Singleplayer Autobattler Course project
 A singleplayer autobattler tutorial project made in Godot 4.
 
-Support GodotGameLab below!
+Support GodotGameLab: 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M0RXV24)
 
 ### Credits
