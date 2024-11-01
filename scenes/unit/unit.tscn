@@ -77,6 +77,8 @@ target = NodePath("..")
 [node name="VelocityBasedRotation" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("5_subtt")
 target = NodePath("../Visuals/Skin")
+lerp_seconds = 0.3
+max_rotation_degrees = 30
 
 [node name="OutlineHighlighter" type="Node" parent="." node_paths=PackedStringArray("visuals")]
 script = ExtResource("7_8586m")

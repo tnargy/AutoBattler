@@ -3,8 +3,8 @@ extends Node
 
 @export var enabled: bool = true : set = _set_enabled
 @export var target: Node2D
-@export_range(0.25, 1.5) var lerp_seconds := 0.3
-@export var rotation_multiplier := 40
+@export_range(0.25, 1.5) var lerp_seconds := 0.4
+@export var max_rotation_degrees := 120
 @export var x_velocity_threshold := 3.0
 
 var last_position: Vector2
@@ -13,7 +13,7 @@ var angle: float
 var progress: float
 var time_elapsed := 0.0
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
     if not enabled or not target:
         return
     
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
     progress = time_elapsed / lerp_seconds
 
     if abs(velocity.x) > x_velocity_threshold:
-        angle = velocity.normalized().x * rotation_multiplier * delta
+        angle = velocity.normalized().x * deg_to_rad(max_rotation_degrees)
     else:
         angle = 0.0
 

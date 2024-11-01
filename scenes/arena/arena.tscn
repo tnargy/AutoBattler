@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=9 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
 [ext_resource type="Texture2D" uid="uid://mbxv0ayrsu3d" path="res://assets/sprites/star_particle.png" id="2_hu2x5"]
+[ext_resource type="Script" path="res://components/unit_grid.gd" id="4_fmdr2"]
 [ext_resource type="PackedScene" uid="uid://dr0nb6qdo1tge" path="res://scenes/unit/unit.tscn" id="4_tn6tq"]
 
 [sub_resource type="Curve" id="Curve_62d5q"]
@@ -71,11 +72,9 @@ tile_set = ExtResource("1_cqjuv")
 [node name="Highlight" type="TileMapLayer" parent="GameArea"]
 tile_set = ExtResource("1_cqjuv")
 
-[node name="Unit" parent="GameArea" instance=ExtResource("4_tn6tq")]
-position = Vector2(64, 128)
-
-[node name="Unit2" parent="GameArea" instance=ExtResource("4_tn6tq")]
-position = Vector2(96, 128)
+[node name="ArenaUnitGrid" type="Node2D" parent="GameArea"]
+script = ExtResource("4_fmdr2")
+size = Vector2i(4, 7)
 
 [node name="Bench" type="TileMapLayer" parent="."]
 position = Vector2(160, 320)
@@ -86,3 +85,16 @@ metadata/_edit_group_ = true
 
 [node name="Highlight" type="TileMapLayer" parent="Bench"]
 tile_set = ExtResource("1_cqjuv")
+
+[node name="Unit" parent="Bench" instance=ExtResource("4_tn6tq")]
+position = Vector2(64, -160)
+
+[node name="Unit2" parent="Bench" instance=ExtResource("4_tn6tq")]
+position = Vector2(96, -160)
+
+[node name="Unit3" parent="Bench" instance=ExtResource("4_tn6tq")]
+position = Vector2(160, -160)
+
+[node name="BenchUnitGrid" type="Node2D" parent="Bench"]
+script = ExtResource("4_fmdr2")
+size = Vector2i(10, 1)
