@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=10 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
 [ext_resource type="Texture2D" uid="uid://mbxv0ayrsu3d" path="res://assets/sprites/star_particle.png" id="2_hu2x5"]
+[ext_resource type="Script" path="res://components/play_area.gd" id="4_6hm71"]
 [ext_resource type="Script" path="res://components/unit_grid.gd" id="4_fmdr2"]
 [ext_resource type="PackedScene" uid="uid://dr0nb6qdo1tge" path="res://scenes/unit/unit.tscn" id="4_tn6tq"]
 
@@ -57,10 +58,12 @@ process_material = SubResource("ParticleProcessMaterial_fc38d")
 texture = ExtResource("2_hu2x5")
 lifetime = 6.0
 
-[node name="GameArea" type="TileMapLayer" parent="."]
+[node name="GameArea" type="TileMapLayer" parent="." node_paths=PackedStringArray("unit_grid")]
 position = Vector2(160, 32)
 tile_map_data = PackedByteArray("AAABAAAAAQAAAAwAAAAAAAEAAQAAAAwAAAABAAIAAQAAAAwAAAAAAAMAAQAAAAwAAAABAAQAAQABAAwAAAAAAAUAAQAAAAwAAAABAAYAAQAAAAwAAAACAAEAAQAAAAwAAAACAAMAAQAAAAwAAAACAAUAAQAAAAwAAAADAAAAAQACAAwAAAADAAIAAQAAAAwAAAADAAQAAQAAAAwAAAADAAYAAQABAAwAAAAEAAEAAQAAAAwAAAAEAAMAAQAAAAwAAAAEAAUAAQAAAAwAAAAFAAAAAQAAAAwAAAAFAAIAAQADAAwAAAAFAAQAAQAAAAwAAAAFAAYAAQAAAAwAAAAGAAEAAQAAAAwAAAAGAAMAAQAAAAwAAAAGAAUAAQACAAwAAAAHAAAAAQAAAAwAAAAHAAIAAQAAAAwAAAAHAAQAAQAAAAwAAAAHAAYAAQABAAwAAAAIAAEAAQADAAwAAAAIAAMAAQAAAAwAAAAIAAUAAQAAAAwAAAAJAAAAAQAAAAwAAAAJAAIAAQAAAAwAAAAJAAQAAQAAAAwAAAAJAAYAAQAAAAwAAAA=")
 tile_set = ExtResource("1_cqjuv")
+script = ExtResource("4_6hm71")
+unit_grid = NodePath("ArenaUnitGrid")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -76,10 +79,12 @@ tile_set = ExtResource("1_cqjuv")
 script = ExtResource("4_fmdr2")
 size = Vector2i(4, 7)
 
-[node name="Bench" type="TileMapLayer" parent="."]
+[node name="Bench" type="TileMapLayer" parent="." node_paths=PackedStringArray("unit_grid")]
 position = Vector2(160, 320)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAsAAAABAAAAAQAAAAcAAAACAAAAAQAAAAsAAAADAAAAAQAAAAcAAAAEAAAAAQAAAAsAAAAFAAAAAQAAAAcAAAAGAAAAAQAAAAsAAAAHAAAAAQAAAAcAAAAIAAAAAQAAAAsAAAAJAAAAAQAAAAcAAAA=")
 tile_set = ExtResource("1_cqjuv")
+script = ExtResource("4_6hm71")
+unit_grid = NodePath("BenchUnitGrid")
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
