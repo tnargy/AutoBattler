@@ -12,13 +12,13 @@ extends Area2D
 @onready var outline_highlighter = $OutlineHighlighter
 
 
-func _ready() -> void:
+func _ready():
 	if not Engine.is_editor_hint():
 		drag_and_drop.drag_started.connect(_on_drag_started)
 		drag_and_drop.drag_canceled.connect(_on_drag_canceled)
 
 
-func set_stats(value: UnitStats) -> void:
+func set_stats(value: UnitStats):
 	stats = value
 	
 	if value == null:
@@ -30,16 +30,16 @@ func set_stats(value: UnitStats) -> void:
 	skin.region_rect.position = Vector2(stats.skin_coordinates) * Arena.CELL_SIZE
 
 
-func reset_after_dragging(starting_position: Vector2) -> void:
+func reset_after_dragging(starting_position: Vector2):
 	velocity_based_rotation.enabled = false
 	global_position = starting_position
 
 
-func _on_drag_started() -> void:
+func _on_drag_started():
 	velocity_based_rotation.enabled = true
 
 
-func _on_drag_canceled(starting_position: Vector2) -> void:
+func _on_drag_canceled(starting_position: Vector2):
 	reset_after_dragging(starting_position)
 
 

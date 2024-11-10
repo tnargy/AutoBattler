@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=12 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://components/unit_grid.gd" id="4_fmdr2"]
 [ext_resource type="PackedScene" uid="uid://dr0nb6qdo1tge" path="res://scenes/unit/unit.tscn" id="4_tn6tq"]
 [ext_resource type="Script" path="res://components/tile_highlighter.gd" id="6_nicdw"]
+[ext_resource type="Script" path="res://components/unit_mover.gd" id="8_4a3o7"]
 
 [sub_resource type="Curve" id="Curve_62d5q"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.209302, 0.996065), 0.0, 0.0, 0, 0, Vector2(0.785714, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -116,3 +117,7 @@ script = ExtResource("6_nicdw")
 play_area = NodePath("..")
 highlight_layer = NodePath("../Highlight")
 tile = Vector2i(3, 0)
+
+[node name="UnitMover" type="Node" parent="." node_paths=PackedStringArray("play_areas")]
+script = ExtResource("8_4a3o7")
+play_areas = [NodePath("../GameArea"), NodePath("../Bench")]

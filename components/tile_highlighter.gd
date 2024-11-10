@@ -10,7 +10,7 @@ extends Node
 @onready var source_id := play_area.tile_set.get_source_id(0)
 
 
-func _process(_delta: float) -> void:
+func _process(_delta: float):
 	if not enabled:
 		return
 
@@ -23,13 +23,13 @@ func _process(_delta: float) -> void:
 	_update_tile(selected_tile)
 	
 
-func _set_enabled(new_value: bool) -> void:
+func _set_enabled(new_value: bool):
 	enabled = new_value
 
 	if not enabled and play_area:
 		highlight_layer.clear()
 
 	
-func _update_tile(selected_tile: Vector2i) -> void:
+func _update_tile(selected_tile: Vector2i):
 	highlight_layer.clear()
 	highlight_layer.set_cell(selected_tile, source_id, tile)

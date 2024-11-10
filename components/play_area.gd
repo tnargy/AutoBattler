@@ -6,7 +6,7 @@ extends TileMapLayer
 var bounds: Rect2i
 
 
-func _ready() -> void:
+func _ready():
     bounds = Rect2i(Vector2.ZERO, unit_grid.size)
 
 

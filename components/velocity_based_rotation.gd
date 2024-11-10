@@ -13,7 +13,7 @@ var angle: float
 var progress: float
 var time_elapsed := 0.0
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float):
     if not enabled or not target:
         return
     
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
     if progress > 1.0:
         time_elapsed = 0.0
 
-func _set_enabled(value: bool) -> void:
+func _set_enabled(value: bool):
     enabled = value
 
     if target and enabled == false:

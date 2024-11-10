@@ -8,7 +8,7 @@ signal unit_grid_changed
 var units: Dictionary
 
 
-func  _ready() -> void:
+func  _ready():
 	for i in size.x:
 		for j in size.y:
 			units[Vector2i(i,j)] = null
@@ -22,7 +22,7 @@ func  _ready() -> void:
 	# print("array of all units: ", get_all_units())
 
 
-func add_unit(tile: Vector2i, unit: Node) -> void:
+func add_unit(tile: Vector2i, unit: Node):
 	units[tile] = unit
 	unit_grid_changed.emit()
 

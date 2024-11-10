@@ -12,30 +12,30 @@ var starting_position: Vector2
 var offset := Vector2.ZERO
 var dragging := false
 
-func _ready() -> void:
+func _ready():
 	assert(target, "No target set for DragAndDrop Component!")
 	target.input_event.connect(_on_target_input_event.unbind(1))
 
-func _process(_delta: float) -> void:
+func _process(_delta: float):
 	if dragging and target:
 		target.global_position = target.get_global_mouse_position() + offset
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent):
 	if dragging and event.is_action_pressed("cancel_drag"):
 		_cancel_dragging()
 	elif dragging and event.is_action_released("select"):
 		_drop()
 
-func _end_dragging() -> void:
+func _end_dragging():
 	dragging = false
 	target.remove_from_group("dragging")
 	target.z_index = 0
 
-func _cancel_dragging() -> void:
+func _cancel_dragging():
 	_end_dragging()
 	drag_canceled.emit(starting_position)
 
-func _start_dragging() -> void:
+func _start_dragging():
 	dragging = true
 	starting_position = target.global_position
 	target.add_to_group("dragging")
@@ -43,11 +43,11 @@ func _start_dragging() -> void:
 	offset = target.global_position - target.get_global_mouse_position()
 	drag_started.emit()
 
-func _drop() -> void:
+func _drop():
 	_end_dragging()
 	dropped.emit(starting_position)
 
-func _on_target_input_event(_viewport: Node, event: InputEvent) -> void:
+func _on_target_input_event(_viewport: Node, event: InputEvent):
 	if not enabled:
 		return
 	
