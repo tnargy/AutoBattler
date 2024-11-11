@@ -33,7 +33,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.231373, 0.113725, 0.0980392, 1)
 
-[node name="Unit" type="Area2D"]
+[node name="Unit" type="Area2D" groups=["units"]]
 script = ExtResource("1_uteyd")
 stats = ExtResource("2_yawvl")
 metadata/_edit_group_ = true

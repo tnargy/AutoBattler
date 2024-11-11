@@ -2,6 +2,7 @@ class_name PlayArea
 extends TileMapLayer
 
 @export var unit_grid: UnitGrid
+@export var tile_highligher: TileHighlighter
 
 var bounds: Rect2i
 

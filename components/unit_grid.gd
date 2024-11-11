@@ -14,17 +14,19 @@ func  _ready():
 			units[Vector2i(i,j)] = null
 
 
-    # TESTS
-	# add_unit(Vector2i(0,0), $"../../Bench/Unit")
-	# print("(0,0) tile_occupied: ", is_tile_occupied(Vector2i(0,0)))
-	# print("is_grid_full(): ", is_grid_full())
-	# print("first_empty_tile: ", get_first_empty_tile())
-	# print("array of all units: ", get_all_units())
-
-
 func add_unit(tile: Vector2i, unit: Node):
 	units[tile] = unit
 	unit_grid_changed.emit()
+
+
+func remove_unit(tile: Vector2i):
+	var unit := units[tile] as Node
+
+	if not unit:
+		return
+
+	units[tile] = null
+	unit_grid_changed.emit();
 
 
 func is_tile_occupied(tile: Vector2i) -> bool:
