@@ -2,6 +2,8 @@
 class_name Unit
 extends Area2D
 
+signal quick_sell_pressed
+
 @export var stats: UnitStats : set = set_stats
 
 @onready var skin: Sprite2D = $Visuals/Skin
@@ -11,11 +13,20 @@ extends Area2D
 @onready var velocity_based_rotation = $VelocityBasedRotation
 @onready var outline_highlighter = $OutlineHighlighter
 
+var is_hovered := false
+
 
 func _ready():
 	if not Engine.is_editor_hint():
 		drag_and_drop.drag_started.connect(_on_drag_started)
 		drag_and_drop.drag_canceled.connect(_on_drag_canceled)
+		
+		
+func _input(event):
+	if not is_hovered: return
+	
+	if event.is_action_pressed("quick_sell"):
+		quick_sell_pressed.emit()
 
 
 func set_stats(value: UnitStats):
@@ -47,6 +58,7 @@ func _on_mouse_entered():
 	if drag_and_drop.dragging:
 		return
 	
+	is_hovered = true
 	outline_highlighter.highlight()
 	z_index = 1
 
@@ -55,5 +67,6 @@ func _on_mouse_exited():
 	if drag_and_drop.dragging:
 		return
 	
+	is_hovered = false
 	outline_highlighter.clear_highlight()
 	z_index = 0

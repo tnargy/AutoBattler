@@ -10,4 +10,4 @@ const QUARTER_CELL_SIZE := Vector2(8, 8)
 
 
 func _ready():
-    unit_spawner.unit_spawned.connect(unit_mover.setup_unit)
+	unit_spawner.unit_spawned.connect(unit_mover.setup_unit)
