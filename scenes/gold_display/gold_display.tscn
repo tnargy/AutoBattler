@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0vhu0acxb1by"]
+
+[ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="1_5r7qb"]
+[ext_resource type="Script" path="res://scenes/gold_display/gold_display.gd" id="1_47psj"]
+[ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="2_tixgf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7jbp3"]
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.729412)
+
+[node name="GoldDisplay" type="HBoxContainer"]
+offset_right = 28.0
+offset_bottom = 18.0
+script = ExtResource("1_47psj")
+player_stats = ExtResource("2_tixgf")
+
+[node name="Gold" type="Label" parent="."]
+layout_mode = 2
+text = "99"
+label_settings = SubResource("LabelSettings_7jbp3")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+texture = ExtResource("1_5r7qb")
+expand_mode = 1
+stretch_mode = 5
