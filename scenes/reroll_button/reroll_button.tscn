@@ -1,18 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqe028jibyhlo"]
+[gd_scene load_steps=9 format=3 uid="uid://dqe028jibyhlo"]
 
 [ext_resource type="StyleBox" uid="uid://5qdjlavnhcfk" path="res://assets/theme/shop_button_hover.tres" id="1_3s1cc"]
 [ext_resource type="StyleBox" uid="uid://mgcn15cjl08u" path="res://assets/theme/shop_button_pressed.tres" id="2_tv4p5"]
 [ext_resource type="StyleBox" uid="uid://c3ias4kwkl52j" path="res://assets/theme/shop_button_normal.tres" id="3_jjocc"]
-[ext_resource type="FontFile" uid="uid://8di0jvr25vat" path="res://assets/font/m5x7.ttf" id="4_ce0ea"]
 [ext_resource type="Script" path="res://scenes/reroll_button/reroll_button.gd" id="4_kmi7d"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="5_1lcsw"]
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="5_bqgxx"]
 [ext_resource type="Texture2D" uid="uid://b8ht5o2amn6iw" path="res://assets/sprites/refresh.png" id="6_s3lt6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pc51i"]
-font = ExtResource("4_ce0ea")
-shadow_size = 2
-shadow_color = Color(0, 0, 0, 0.705882)
+[ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="6_u5l53"]
 
 [node name="RerollButton" type="Button"]
 custom_minimum_size = Vector2(80, 24)
@@ -38,7 +33,7 @@ alignment = 1
 [node name="Text" type="Label" parent="HBoxContainer"]
 layout_mode = 2
 text = "reroll 2"
-label_settings = SubResource("LabelSettings_pc51i")
+label_settings = ExtResource("6_u5l53")
 
 [node name="GoldIcon" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2

@@ -9,8 +9,10 @@ shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.729412)
 
 [node name="GoldDisplay" type="HBoxContainer"]
+custom_minimum_size = Vector2(32, 18)
 offset_right = 28.0
 offset_bottom = 18.0
+alignment = 2
 script = ExtResource("1_47psj")
 player_stats = ExtResource("2_tixgf")
 

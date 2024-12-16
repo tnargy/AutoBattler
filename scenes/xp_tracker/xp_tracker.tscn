@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfbg0bfg7jy7f"]
+
+[ext_resource type="Script" path="res://scenes/xp_tracker/xp_tracker.gd" id="1_bcjeu"]
+[ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="2_tsj21"]
+[ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="3_xi7tx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwvux"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3duq"]
+bg_color = Color(0.337255, 0.635294, 0.882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[node name="XPTracker" type="VBoxContainer"]
+custom_minimum_size = Vector2(70, 28)
+offset_right = 70.0
+offset_bottom = 28.0
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("1_bcjeu")
+player_stats = ExtResource("2_tsj21")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_vwvux")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g3duq")
+value = 60.0
+show_percentage = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="XPLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99/99"
+label_settings = ExtResource("3_xi7tx")
+
+[node name="LevelLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "lvl: 1"
+label_settings = ExtResource("3_xi7tx")
+horizontal_alignment = 2
