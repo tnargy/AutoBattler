@@ -146,3 +146,4 @@ player_stats = ExtResource("13_osffy")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Shop" parent="UI" instance=ExtResource("14_xdu5h")]
+unique_name_in_owner = true
