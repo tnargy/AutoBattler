@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitPool" load_steps=6 format=3 uid="uid://dgtl22qo7gosv"]
+
+[ext_resource type="Script" path="res://data/units/unit_stats.gd" id="1_51sgf"]
+[ext_resource type="Resource" uid="uid://c7m57mx3fsot0" path="res://data/units/arthur.tres" id="2_2ccgq"]
+[ext_resource type="Script" path="res://data/unit_pool/unit_pool.gd" id="2_8f0hl"]
+[ext_resource type="Resource" uid="uid://c74vpd2ke8rg2" path="res://data/units/bjorn.tres" id="3_hqrqk"]
+[ext_resource type="Resource" uid="uid://bkoox2xpvhba2" path="res://data/units/robin.tres" id="4_yawhi"]
+
+[resource]
+script = ExtResource("2_8f0hl")
+available_units = Array[ExtResource("1_51sgf")]([ExtResource("2_2ccgq"), ExtResource("3_hqrqk"), ExtResource("4_yawhi")])
