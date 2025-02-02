@@ -39,7 +39,7 @@ func _on_area_exited(unit: Unit):
 func _sell_unit(unit: Unit):
 	player_stats.gold += unit.stats.get_gold_value()
 	# Todo: give items back to item pool
-	unit_pool.add_unit(unit.status)
+	unit_pool.add_unit(unit.stats)
 	unit.queue_free()
 
 	

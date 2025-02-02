@@ -7,6 +7,7 @@ const QUARTER_CELL_SIZE := Vector2(8, 8)
 
 @onready var unit_mover = $UnitMover
 @onready var unit_spawner = $UnitSpawner
+@onready var unit_combiner = $UnitCombiner
 @onready var sell_portal = $SellPortal
 @onready var shop: Shop = %Shop
 
@@ -14,4 +15,5 @@ const QUARTER_CELL_SIZE := Vector2(8, 8)
 func _ready():
 	unit_spawner.unit_spawned.connect(unit_mover.setup_unit)
 	unit_spawner.unit_spawned.connect(sell_portal.setup_unit)
+	unit_spawner.unit_spawned.connect(unit_combiner.queue_unit_combination_update.unbind(1))
 	shop.unit_bought.connect(unit_spawner.spawn_unit)

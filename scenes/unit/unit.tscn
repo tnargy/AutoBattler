@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://dr0nb6qdo1tge"]
+[gd_scene load_steps=15 format=3 uid="uid://dr0nb6qdo1tge"]
 
 [ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="1_p3rt1"]
 [ext_resource type="Script" path="res://scenes/unit/unit.gd" id="1_uteyd"]
 [ext_resource type="Resource" uid="uid://c74vpd2ke8rg2" path="res://data/units/bjorn.tres" id="2_yawvl"]
 [ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/2d_outline_shader.tres" id="3_uu2xo"]
 [ext_resource type="Script" path="res://components/drag_and_drop.gd" id="4_y56ua"]
+[ext_resource type="PackedScene" uid="uid://dnxqqssr8ny20" path="res://scenes/tier_icon/tier_icon.tscn" id="5_rj5ft"]
 [ext_resource type="Script" path="res://components/velocity_based_rotation.gd" id="5_subtt"]
 [ext_resource type="Script" path="res://components/outline_highlighter.gd" id="7_8586m"]
+[ext_resource type="Script" path="res://components/unit_animations.gd" id="9_01xjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1v6k"]
 size = Vector2(36, 36)
@@ -70,6 +72,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_rewe5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mamkk")
 show_percentage = false
 
+[node name="TierIcon" parent="." instance=ExtResource("5_rj5ft")]
+offset_top = -12.0
+offset_bottom = -2.0
+stats = ExtResource("2_yawvl")
+
 [node name="DragAndDrop" type="Node" parent="." node_paths=PackedStringArray("target")]
 script = ExtResource("4_y56ua")
 target = NodePath("..")
@@ -85,6 +92,10 @@ script = ExtResource("7_8586m")
 visuals = NodePath("../Visuals")
 outline_color = Color(1, 1, 1, 1)
 outline_thickness = 2
+
+[node name="UnitAnimations" type="Node" parent="." node_paths=PackedStringArray("unit")]
+script = ExtResource("9_01xjk")
+unit = NodePath("..")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
