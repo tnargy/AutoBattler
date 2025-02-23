@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Trait" load_steps=3 format=3 uid="uid://t2fwgrt6jc2t"]
+
+[ext_resource type="Script" path="res://data/traits/trait.gd" id="1_60rac"]
+[ext_resource type="Texture2D" uid="uid://c32cyuudt3x6x" path="res://assets/sprites/traits/noble.png" id="1_xx7ey"]
+
+[resource]
+script = ExtResource("1_60rac")
+name = "Noble"
+icon = ExtResource("1_xx7ey")
+description = ""
+levles = 0
+unit_requirements = Array[int]([1])
+unit_modifiers = Array[PackedScene]([null])

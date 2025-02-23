@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="UnitStats" load_steps=2 format=3 uid="uid://bkoox2xpvhba2"]
+[gd_resource type="Resource" script_class="UnitStats" load_steps=5 format=3 uid="uid://bkoox2xpvhba2"]
 
 [ext_resource type="Script" path="res://data/units/unit_stats.gd" id="1_vi7lm"]
+[ext_resource type="Script" path="res://data/traits/trait.gd" id="2_nqeng"]
+[ext_resource type="Resource" uid="uid://bpd7x8oxk26qr" path="res://data/traits/ranger.tres" id="3_q1uk4"]
+[ext_resource type="Resource" uid="uid://7nd3im3yj1q1" path="res://data/traits/elf.tres" id="4_wf0r2"]
 
 [resource]
 script = ExtResource("1_vi7lm")
 name = "Robin"
 rarity = 0
 gold_cost = 1
+tier = 1
+traits = Array[ExtResource("2_nqeng")]([ExtResource("3_q1uk4"), ExtResource("4_wf0r2")])
+pool_count = 5
 skin_coordinates = Vector2i(2, 0)

@@ -22,6 +22,7 @@ const HOVER_BORDER_COLOR := Color("fafa82")
 		border_color = UnitStats.RARITY_COLORS[unit_status.rarity]
 		border_sb.border_color = border_color
 		bottom_sb.bg_color = border_color
+		traits.text = "\n".join(Trait.get_trait_names(unit_status.traits))
 		unit_name.text = unit_status.name
 		gold_cost.text = str(unit_status.gold_cost)
 		unit_icon.texture.region.position = Vector2(unit_status.skin_coordinates) * Arena.CELL_SIZE

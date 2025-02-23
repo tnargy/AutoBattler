@@ -19,6 +19,7 @@ const RARITY_COLORS := {
 	set(value):
 		tier = value
 		emit_changed()
+@export var traits: Array[Trait]
 
 @export var pool_count := 5
 @export_category("Visuals")
