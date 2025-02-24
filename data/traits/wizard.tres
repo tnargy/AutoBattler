@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_tf6bx")
-name = "Wizard"
+name = "wizard"
 icon = ExtResource("1_p7jca")
 description = ""
 levles = 3
