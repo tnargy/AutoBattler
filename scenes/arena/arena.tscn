@@ -170,4 +170,6 @@ player_stats = ExtResource("16_21v2n")
 arena_grid = NodePath("../../GameArea/ArenaUnitGrid")
 
 [node name="Traits" parent="UI" node_paths=PackedStringArray("arena_grid") instance=ExtResource("17_3nit5")]
+offset_top = 2.0
+offset_bottom = 2.0
 arena_grid = NodePath("../../GameArea/ArenaUnitGrid")
