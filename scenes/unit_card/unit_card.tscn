@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yc0hfppd0mo4"]
+[gd_scene load_steps=14 format=3 uid="uid://yc0hfppd0mo4"]
 
 [ext_resource type="FontFile" uid="uid://8di0jvr25vat" path="res://assets/font/m5x7.ttf" id="1_rqa31"]
 [ext_resource type="Script" path="res://scenes/unit_card/unit_card.gd" id="1_yndfl"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="2_j04uq"]
 [ext_resource type="Resource" uid="uid://c7m57mx3fsot0" path="res://data/units/arthur.tres" id="3_4wq6o"]
 [ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="3_k2q7m"]
+[ext_resource type="AudioStream" uid="uid://05sgyew2ynsi" path="res://assets/sfx/buy.ogg" id="4_16lpr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hocta"]
 line_spacing = 0.0
@@ -45,6 +46,7 @@ focus_mode = 0
 script = ExtResource("1_yndfl")
 player_stats = ExtResource("2_j04uq")
 unit_status = ExtResource("3_4wq6o")
+buy_sound = ExtResource("4_16lpr")
 
 [node name="Backdrop" type="ColorRect" parent="."]
 layout_mode = 1

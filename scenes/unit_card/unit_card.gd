@@ -26,6 +26,7 @@ const HOVER_BORDER_COLOR := Color("fafa82")
 		unit_name.text = unit_status.name
 		gold_cost.text = str(unit_status.gold_cost)
 		unit_icon.texture.region.position = Vector2(unit_status.skin_coordinates) * Arena.CELL_SIZE
+@export var buy_sound: AudioStream
 
 @onready var traits = %Traits
 @onready var bottom = %Bottom
@@ -67,6 +68,7 @@ func _on_pressed():
 	empty_placeholder.show()
 	player_stats.gold -= unit_status.gold_cost
 	unit_bought.emit(unit_status)
+	SFXPlayer.play(buy_sound)
 
 
 func _on_mouse_entered():

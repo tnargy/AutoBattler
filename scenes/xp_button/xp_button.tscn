@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://f8nqq4i61rta"]
+[gd_scene load_steps=9 format=3 uid="uid://f8nqq4i61rta"]
 
 [ext_resource type="StyleBox" uid="uid://5qdjlavnhcfk" path="res://assets/theme/shop_button_hover.tres" id="1_u2bdk"]
 [ext_resource type="StyleBox" uid="uid://mgcn15cjl08u" path="res://assets/theme/shop_button_pressed.tres" id="2_jho77"]
@@ -7,6 +7,7 @@
 [ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="4_ikqei"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="5_kwvly"]
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="5_r1y58"]
+[ext_resource type="AudioStream" uid="uid://q4db8jmbfdk7" path="res://assets/sfx/xp_buy.ogg" id="6_efxco"]
 
 [node name="XPButton" type="Button"]
 custom_minimum_size = Vector2(30, 30)
@@ -18,6 +19,7 @@ theme_override_styles/pressed = ExtResource("2_jho77")
 theme_override_styles/normal = ExtResource("3_7dbc6")
 script = ExtResource("4_7cqun")
 player_stats = ExtResource("5_kwvly")
+xp_sound = ExtResource("6_efxco")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

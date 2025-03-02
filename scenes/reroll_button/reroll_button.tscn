@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqe028jibyhlo"]
+[gd_scene load_steps=10 format=3 uid="uid://dqe028jibyhlo"]
 
 [ext_resource type="StyleBox" uid="uid://5qdjlavnhcfk" path="res://assets/theme/shop_button_hover.tres" id="1_3s1cc"]
 [ext_resource type="StyleBox" uid="uid://mgcn15cjl08u" path="res://assets/theme/shop_button_pressed.tres" id="2_tv4p5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/reroll_button/reroll_button.gd" id="4_kmi7d"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="5_1lcsw"]
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="5_bqgxx"]
+[ext_resource type="AudioStream" uid="uid://cjrjne6mkcml3" path="res://assets/sfx/reroll.ogg" id="6_q8a7r"]
 [ext_resource type="Texture2D" uid="uid://b8ht5o2amn6iw" path="res://assets/sprites/refresh.png" id="6_s3lt6"]
 [ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="6_u5l53"]
 
@@ -19,6 +20,7 @@ theme_override_styles/pressed = ExtResource("2_tv4p5")
 theme_override_styles/normal = ExtResource("3_jjocc")
 script = ExtResource("4_kmi7d")
 player_stats = ExtResource("5_1lcsw")
+reroll_sound = ExtResource("6_q8a7r")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
