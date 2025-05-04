@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="UnitPool" load_steps=7 format=3 uid="uid://dgtl22qo7gosv"]
 
-[ext_resource type="Script" path="res://data/units/unit_stats.gd" id="1_51sgf"]
+[ext_resource type="Script" uid="uid://dy0q8tyj60kkr" path="res://data/units/unit_stats.gd" id="1_51sgf"]
 [ext_resource type="Resource" uid="uid://c7m57mx3fsot0" path="res://data/units/arthur.tres" id="2_2ccgq"]
-[ext_resource type="Script" path="res://data/unit_pool/unit_pool.gd" id="2_8f0hl"]
+[ext_resource type="Script" uid="uid://ct8kxggiyolrm" path="res://data/unit_pool/unit_pool.gd" id="2_8f0hl"]
 [ext_resource type="Resource" uid="uid://c74vpd2ke8rg2" path="res://data/units/bjorn.tres" id="3_hqrqk"]
 [ext_resource type="Resource" uid="uid://bkoox2xpvhba2" path="res://data/units/robin.tres" id="4_yawhi"]
 [ext_resource type="Resource" uid="uid://dd4ri6ymi2qpu" path="res://data/units/harry.tres" id="5_qr8pk"]

@@ -1,14 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://dr0nb6qdo1tge"]
 
 [ext_resource type="Texture2D" uid="uid://cx1ivjobggp8n" path="res://assets/sprites/rogues.png" id="1_p3rt1"]
-[ext_resource type="Script" path="res://scenes/unit/unit.gd" id="1_uteyd"]
+[ext_resource type="Script" uid="uid://dwf52u2yxqpcl" path="res://scenes/unit/unit.gd" id="1_uteyd"]
 [ext_resource type="Resource" uid="uid://c74vpd2ke8rg2" path="res://data/units/bjorn.tres" id="2_yawvl"]
 [ext_resource type="Material" uid="uid://bb8m5fhpi4wqn" path="res://assets/shaders/2d_outline_shader.tres" id="3_uu2xo"]
-[ext_resource type="Script" path="res://components/drag_and_drop.gd" id="4_y56ua"]
+[ext_resource type="Script" uid="uid://ciardabi41c46" path="res://components/drag_and_drop.gd" id="4_y56ua"]
 [ext_resource type="PackedScene" uid="uid://dnxqqssr8ny20" path="res://scenes/tier_icon/tier_icon.tscn" id="5_rj5ft"]
-[ext_resource type="Script" path="res://components/velocity_based_rotation.gd" id="5_subtt"]
-[ext_resource type="Script" path="res://components/outline_highlighter.gd" id="7_8586m"]
-[ext_resource type="Script" path="res://components/unit_animations.gd" id="9_01xjk"]
+[ext_resource type="Script" uid="uid://cgp8nro31jr85" path="res://components/velocity_based_rotation.gd" id="5_subtt"]
+[ext_resource type="Script" uid="uid://cvrk6fs1wtf5o" path="res://components/outline_highlighter.gd" id="7_8586m"]
+[ext_resource type="Script" uid="uid://d4m3ah3noue0f" path="res://custom_nodes/unit_animations.gd" id="9_01xjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1v6k"]
 size = Vector2(36, 36)

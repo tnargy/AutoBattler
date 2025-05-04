@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfbg0bfg7jy7f"]
 
-[ext_resource type="Script" path="res://scenes/xp_tracker/xp_tracker.gd" id="1_bcjeu"]
+[ext_resource type="Script" uid="uid://bfgqiaani57sv" path="res://scenes/xp_tracker/xp_tracker.gd" id="1_bcjeu"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="2_tsj21"]
 [ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="3_xi7tx"]
 

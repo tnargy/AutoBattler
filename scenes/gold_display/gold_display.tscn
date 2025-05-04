@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0vhu0acxb1by"]
 
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="1_5r7qb"]
-[ext_resource type="Script" path="res://scenes/gold_display/gold_display.gd" id="1_47psj"]
+[ext_resource type="Script" uid="uid://vu1wfejtxbjw" path="res://scenes/gold_display/gold_display.gd" id="1_47psj"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="2_tixgf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7jbp3"]

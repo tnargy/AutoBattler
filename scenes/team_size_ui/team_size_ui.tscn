@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://rh3dw1cljnux"]
 
 [ext_resource type="Texture2D" uid="uid://ckect222m1bin" path="res://assets/sprites/warning.png" id="1_6jepl"]
-[ext_resource type="Script" path="res://scenes/team_size_ui/team_size_ui.gd" id="1_kpitj"]
+[ext_resource type="Script" uid="uid://brtsn553pj7lc" path="res://scenes/team_size_ui/team_size_ui.gd" id="1_kpitj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bijuo"]
 shadow_size = 2

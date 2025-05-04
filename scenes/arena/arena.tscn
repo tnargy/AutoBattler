@@ -1,16 +1,16 @@
 [gd_scene load_steps=21 format=4 uid="uid://dtn03ebo5jbud"]
 
-[ext_resource type="Script" path="res://scenes/arena/arena.gd" id="1_agggs"]
+[ext_resource type="Script" uid="uid://dgm87b1og3w2h" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
 [ext_resource type="Texture2D" uid="uid://mbxv0ayrsu3d" path="res://assets/sprites/star_particle.png" id="2_hu2x5"]
 [ext_resource type="AudioStream" uid="uid://dwse76yhsgxvm" path="res://assets/music/alexander_ehlers_twists.ogg" id="2_xynfr"]
-[ext_resource type="Script" path="res://components/play_area.gd" id="4_6hm71"]
-[ext_resource type="Script" path="res://components/unit_grid.gd" id="4_fmdr2"]
-[ext_resource type="Script" path="res://components/tile_highlighter.gd" id="6_nicdw"]
-[ext_resource type="Script" path="res://components/unit_mover.gd" id="8_4a3o7"]
+[ext_resource type="Script" uid="uid://dpnf0wp6ctik4" path="res://custom_nodes/play_area.gd" id="4_6hm71"]
+[ext_resource type="Script" uid="uid://cmva5c8b1ntqp" path="res://custom_nodes/unit_grid.gd" id="4_fmdr2"]
+[ext_resource type="Script" uid="uid://cc7i6p71oo02k" path="res://components/tile_highlighter.gd" id="6_nicdw"]
+[ext_resource type="Script" uid="uid://bcryiimsvwuex" path="res://custom_nodes/unit_mover.gd" id="8_4a3o7"]
 [ext_resource type="AudioStream" uid="uid://xgrsj3clmat0" path="res://assets/sfx/unit_place.ogg" id="11_leqem"]
-[ext_resource type="Script" path="res://components/unit_spawner.gd" id="11_w4bbn"]
-[ext_resource type="Script" path="res://components/unit_combiner.gd" id="12_bhm1x"]
+[ext_resource type="Script" uid="uid://kl1g7vadth50" path="res://custom_nodes/unit_spawner.gd" id="11_w4bbn"]
+[ext_resource type="Script" uid="uid://wmetudmmc8jm" path="res://custom_nodes/unit_combiner.gd" id="12_bhm1x"]
 [ext_resource type="PackedScene" uid="uid://4v01tpqvgxhx" path="res://scenes/sell_portal/sell_portal.tscn" id="12_j3ew7"]
 [ext_resource type="AudioStream" uid="uid://dubwbrp3e8hg3" path="res://assets/sfx/combine.ogg" id="13_iio8r"]
 [ext_resource type="PackedScene" uid="uid://be5xmkfrsy6o0" path="res://scenes/shop/shop.tscn" id="14_xdu5h"]
@@ -66,9 +66,9 @@ tile_set = ExtResource("1_cqjuv")
 z_index = 99
 position = Vector2(320, 180)
 amount = 20
-process_material = SubResource("ParticleProcessMaterial_fc38d")
 texture = ExtResource("2_hu2x5")
 lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_fc38d")
 
 [node name="GameArea" type="TileMapLayer" parent="." node_paths=PackedStringArray("unit_grid", "tile_highligher")]
 position = Vector2(160, 32)

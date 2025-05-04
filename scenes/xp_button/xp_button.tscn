@@ -3,7 +3,7 @@
 [ext_resource type="StyleBox" uid="uid://5qdjlavnhcfk" path="res://assets/theme/shop_button_hover.tres" id="1_u2bdk"]
 [ext_resource type="StyleBox" uid="uid://mgcn15cjl08u" path="res://assets/theme/shop_button_pressed.tres" id="2_jho77"]
 [ext_resource type="StyleBox" uid="uid://c3ias4kwkl52j" path="res://assets/theme/shop_button_normal.tres" id="3_7dbc6"]
-[ext_resource type="Script" path="res://scenes/xp_button/xp_button.gd" id="4_7cqun"]
+[ext_resource type="Script" uid="uid://pgmemlj8dqhw" path="res://scenes/xp_button/xp_button.gd" id="4_7cqun"]
 [ext_resource type="LabelSettings" uid="uid://ddodgvytfc2lv" path="res://assets/small_font.tres" id="4_ikqei"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="5_kwvly"]
 [ext_resource type="Texture2D" uid="uid://c4awhqfup7o2k" path="res://assets/sprites/gold.png" id="5_r1y58"]
