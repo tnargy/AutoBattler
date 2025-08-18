@@ -10,8 +10,8 @@ const HOVER_BORDER_COLOR := Color("fafa82")
 	set(value):
 		unit_status = value
 		
-		if not is_node_ready():
-			await ready
+		if not is_instance_valid(empty_placeholder):
+			return
 			
 		if not unit_status:
 			empty_placeholder.show()
@@ -45,7 +45,6 @@ var border_color: Color
 func _ready():
 	player_stats.changed.connect(_on_player_stats_changed)
 	_on_player_stats_changed()
-
 
 func _on_player_stats_changed():
 	if not unit_status:

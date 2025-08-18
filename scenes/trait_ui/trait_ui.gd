@@ -3,8 +3,8 @@ extends PanelContainer
 
 @export var trait_data: Trait : 
 	set(value):
-		if not is_node_ready():
-			await ready
+		if value == null or not is_instance_valid(trait_label):
+			return
 			
 		trait_data = value
 		trait_icon.texture = trait_data.icon

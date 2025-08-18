@@ -17,8 +17,6 @@ func _set_stats(value: UnitStats):
 		
 		if stats == null:
 			return
-		if not is_node_ready():
-			await ready
 			
 		stats.changed.connect(_on_stats_changed)
 		_on_stats_changed()
