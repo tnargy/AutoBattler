@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=24 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" uid="uid://dgm87b1og3w2h" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cwhglnpmvhdy8" path="res://components/scene_spawner.gd" id="11_8kk48"]
 [ext_resource type="AudioStream" uid="uid://xgrsj3clmat0" path="res://assets/sfx/unit_place.ogg" id="11_leqem"]
 [ext_resource type="Script" uid="uid://kl1g7vadth50" path="res://custom_nodes/unit_spawner.gd" id="11_w4bbn"]
+[ext_resource type="Resource" uid="uid://c0xl7rjf6qahd" path="res://data/game_state/game_state.tres" id="11_wqbss"]
 [ext_resource type="Script" uid="uid://wmetudmmc8jm" path="res://custom_nodes/unit_combiner.gd" id="12_bhm1x"]
 [ext_resource type="PackedScene" uid="uid://4v01tpqvgxhx" path="res://scenes/sell_portal/sell_portal.tscn" id="12_j3ew7"]
 [ext_resource type="PackedScene" uid="uid://dr0nb6qdo1tge" path="res://scenes/unit/unit.tscn" id="12_wqbss"]
@@ -129,11 +130,13 @@ tile = Vector2i(3, 0)
 script = ExtResource("8_4a3o7")
 play_areas = [NodePath("../GameArea"), NodePath("../Bench")]
 unit_place_sound = ExtResource("11_leqem")
+game_state = ExtResource("11_wqbss")
 
 [node name="UnitSpawner" type="Node" parent="." node_paths=PackedStringArray("game_area", "bench")]
 script = ExtResource("11_w4bbn")
 game_area = NodePath("../GameArea")
 bench = NodePath("../Bench")
+game_state = ExtResource("11_wqbss")
 
 [node name="SceneSpawner" type="Node" parent="UnitSpawner"]
 script = ExtResource("11_8kk48")
