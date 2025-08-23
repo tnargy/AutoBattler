@@ -14,3 +14,4 @@ tier = 1
 traits = Array[ExtResource("2_q2rne")]([ExtResource("3_s4ywj"), ExtResource("4_fq7gj")])
 pool_count = 5
 skin_coordinates = Vector2i(4, 2)
+team = 0
