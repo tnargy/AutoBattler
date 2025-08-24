@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=27 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" uid="uid://dgm87b1og3w2h" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://be5xmkfrsy6o0" path="res://scenes/shop/shop.tscn" id="14_xdu5h"]
 [ext_resource type="PackedScene" uid="uid://rh3dw1cljnux" path="res://scenes/team_size_ui/team_size_ui.tscn" id="15_wwwtp"]
 [ext_resource type="Resource" uid="uid://ctb63tovx61rp" path="res://data/player/player_stats.tres" id="16_21v2n"]
+[ext_resource type="Script" uid="uid://bck3educia8er" path="res://custom_nodes/battle_handler.gd" id="16_gy0qm"]
 [ext_resource type="PackedScene" uid="uid://clqm2bv0sml35" path="res://scenes/traits/traits.tscn" id="17_3nit5"]
+[ext_resource type="PackedScene" uid="uid://bonsgra6aj8eb" path="res://scenes/battle_unit/battle_unit.tscn" id="17_dh340"]
 [ext_resource type="PackedScene" uid="uid://d326v4dfs48hp" path="res://scenes/start_battle_button/start_battle_button.tscn" id="21_fir7s"]
 
 [sub_resource type="Curve" id="Curve_62d5q"]
@@ -96,6 +98,10 @@ tile_set = ExtResource("1_cqjuv")
 script = ExtResource("4_fmdr2")
 size = Vector2i(4, 7)
 
+[node name="BattleUnitGrid" type="Node2D" parent="GameArea"]
+script = ExtResource("4_fmdr2")
+size = Vector2i(10, 7)
+
 [node name="TileHighlighter" type="Node" parent="GameArea" node_paths=PackedStringArray("play_area", "highlight_layer")]
 script = ExtResource("6_nicdw")
 enabled = false
@@ -151,6 +157,19 @@ combine_sound = ExtResource("13_iio8r")
 
 [node name="BufferTimer" type="Timer" parent="UnitCombiner"]
 one_shot = true
+
+[node name="BattleHandler" type="Node" parent="." node_paths=PackedStringArray("game_area", "game_area_unit_grid", "battle_unit_grid")]
+script = ExtResource("16_gy0qm")
+game_state = ExtResource("11_wqbss")
+game_area = NodePath("../GameArea")
+game_area_unit_grid = NodePath("../GameArea/ArenaUnitGrid")
+battle_unit_grid = NodePath("../GameArea/BattleUnitGrid")
+metadata/_custom_type_script = "uid://bck3educia8er"
+
+[node name="SceneSpawner" type="Node" parent="BattleHandler"]
+script = ExtResource("11_8kk48")
+scene = ExtResource("17_dh340")
+metadata/_custom_type_script = "uid://cwhglnpmvhdy8"
 
 [node name="SellPortal" parent="." instance=ExtResource("12_j3ew7")]
 position = Vector2(80, 288)
