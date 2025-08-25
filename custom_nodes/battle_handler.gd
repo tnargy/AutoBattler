@@ -25,6 +25,13 @@ func _ready():
 	game_state.changed.connect(_on_game_state_changed)
 
 
+func _input(event):
+	if event.is_action_pressed("test1"):
+		get_tree().call_group("player_units", "queue_free")
+	if event.is_action_pressed("test2"):
+		get_tree().call_group("enemy_units", "queue_free")
+
+
 func _setup_battle_unit(unit_coord: Vector2i, new_unit: BattleUnit):
 	new_unit.global_position = game_area.get_global_from_tile(unit_coord) + Vector2(0, -Arena.QUARTER_CELL_SIZE.y)
 	new_unit.tree_exited.connect(_on_battle_unit_died)
@@ -32,6 +39,8 @@ func _setup_battle_unit(unit_coord: Vector2i, new_unit: BattleUnit):
 
 
 func _clean_up_fight():
+	get_tree().call_group("player_units", "queue_free")
+	get_tree().call_group("enemy_units", "queue_free")
 	get_tree().call_group("units", "show")
 
 
@@ -69,10 +78,8 @@ func _on_battle_unit_died():
 		return
 	
 	if get_tree().get_node_count_in_group("enemy_units") == 0:
-		print("Player Won!")
 		game_state.current_phase = GameState.Phase.PREPARATION
 		player_won.emit()
 	if get_tree().get_node_count_in_group("player_units") == 0:
-		print("Enemy Won!")
 		game_state.current_phase = GameState.Phase.PREPARATION
 		enemy_won.emit()
