@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dtn03ebo5jbud"]
+[gd_scene load_steps=28 format=4 uid="uid://dtn03ebo5jbud"]
 
 [ext_resource type="Script" uid="uid://dgm87b1og3w2h" path="res://scenes/arena/arena.gd" id="1_agggs"]
 [ext_resource type="TileSet" uid="uid://bk4xsprr46rja" path="res://scenes/arena/tileset.tres" id="1_cqjuv"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://bck3educia8er" path="res://custom_nodes/battle_handler.gd" id="16_gy0qm"]
 [ext_resource type="PackedScene" uid="uid://clqm2bv0sml35" path="res://scenes/traits/traits.tscn" id="17_3nit5"]
 [ext_resource type="PackedScene" uid="uid://bonsgra6aj8eb" path="res://scenes/battle_unit/battle_unit.tscn" id="17_dh340"]
+[ext_resource type="Script" uid="uid://c74edbk0ymi7" path="res://custom_nodes/unit_navigation_debug.gd" id="19_l0cts"]
 [ext_resource type="PackedScene" uid="uid://d326v4dfs48hp" path="res://scenes/start_battle_button/start_battle_button.tscn" id="21_fir7s"]
 
 [sub_resource type="Curve" id="Curve_62d5q"]
@@ -173,6 +174,14 @@ metadata/_custom_type_script = "uid://cwhglnpmvhdy8"
 
 [node name="SellPortal" parent="." instance=ExtResource("12_j3ew7")]
 position = Vector2(80, 288)
+
+[node name="UnitNavigationDebug" type="Node2D" parent="." node_paths=PackedStringArray("game_area")]
+position = Vector2(160, 32)
+script = ExtResource("19_l0cts")
+color = Color(0.796078, 0.34902, 0.45098, 0.517647)
+path_colors = Array[Color]([Color(0.53586, 0.833117, 0.98148, 1), Color(0.955364, 0.597912, 0.55798, 1), Color(0.584511, 0.881214, 0.469347, 1), Color(0.919015, 0.903258, 0.316554, 1), Color(0.806892, 0.633226, 0.998437, 1)])
+game_area = NodePath("../GameArea")
+metadata/_custom_type_script = "uid://c74edbk0ymi7"
 
 [node name="UI" type="CanvasLayer" parent="."]
 
