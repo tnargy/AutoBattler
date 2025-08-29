@@ -29,6 +29,9 @@ func _input(event):
 	if event.is_action_pressed("test1"):
 		var ai_unit := get_tree().get_nodes_in_group("player_units")[0] as BattleUnit
 		ai_unit.unit_ai.enabled = true
+	if event.is_action_pressed("test2"):
+		var ai_unit := get_tree().get_nodes_in_group("player_units")[1] as BattleUnit
+		ai_unit.unit_ai.enabled = true
 
 
 func _setup_battle_unit(unit_coord: Vector2i, new_unit: BattleUnit):
