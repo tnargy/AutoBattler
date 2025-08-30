@@ -23,3 +23,5 @@ func _set_stats(value: UnitStats):
 	skin.coordinates = stats.skin_coordinates
 	skin.flip_h = stats.team == stats.Team.PLAYER
 	tier_icon.stats = stats
+	health_bar.stats = stats
+	mana_bar.stats = stats

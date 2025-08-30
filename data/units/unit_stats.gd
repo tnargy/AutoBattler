@@ -1,6 +1,9 @@
 class_name UnitStats
 extends Resource
 
+signal health_reached_zero
+signal mana_bar_filled
+
 enum Rarity {COMMON, UNCOMMON, RARE, LEGENDARY}
 enum Team {PLAYER, ENEMY}
 
@@ -11,13 +14,19 @@ const RARITY_COLORS := {
 	Rarity.LEGENDARY: Color("ea940b"),
 }
 
+const TARGET := {
+	Team.PLAYER: "enemy units",
+	Team.ENEMY: "player_untis"
+}
+
 const TEAM_SPRITESHEET := {
 	Team.PLAYER: preload("res://assets/sprites/rogues.png"),
 	Team.ENEMY: preload("res://assets/sprites/monsters.png")
 }
 
+const MAX_ATTACK_RANGE := 5
+const MANA_PER_ATTACK := 10
 const MOVE_ONE_TILE_SPEED := 1.0
-
 
 @export var name: String
 
@@ -37,6 +46,39 @@ const MOVE_ONE_TILE_SPEED := 1.0
 
 @export_category("Battle")
 @export var team: Team
+@export var max_health: Array[int]
+@export var max_mana: int
+@export var starting_mana: int
+@export var attack_damage: Array[int]
+@export var ability_power: int
+@export var attack_speed: float
+@export var armor: int
+@export var magic_resist: int
+@export_range(1, MAX_ATTACK_RANGE) var attack_range: int
+# TODO attack and casting related variables
+
+var health: int:
+	set(value):
+		health = value
+		emit_changed()
+		
+		if health <= 0:
+			health_reached_zero.emit()
+var mana: int:
+	set(value):
+		mana = value
+		emit_changed()
+		
+		if mana >= max_mana and max_mana > 0:
+			mana_bar_filled.emit()
+
+
+func reset_health():
+	health = get_max_health()
+	
+
+func reset_mana():
+	mana = starting_mana
 
 
 func get_combined_unit_count() -> int:
@@ -45,3 +87,19 @@ func get_combined_unit_count() -> int:
 
 func get_gold_value() -> int:
 	return gold_cost * get_combined_unit_count()
+
+
+func get_max_health() -> int:
+	return max_health[tier-1]
+
+
+func get_attack_damage() -> int:
+	return attack_damage[tier-1]
+
+
+func  get_time_between_attacks() -> float:
+	return 1 / attack_speed
+
+
+func is_melee() -> bool:
+	return attack_range == 1
