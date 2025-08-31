@@ -4,6 +4,7 @@ extends Area2D
 @export var stats: UnitStats: set = _set_stats
 
 @onready var skin : PackedSprite2D = $Skin
+@onready var detect_range = $DetectRange
 @onready var hurt_box = $HurtBox
 @onready var health_bar := $HealthBar
 @onready var mana_bar := $ManaBar
@@ -30,6 +31,7 @@ func _set_stats(value: UnitStats):
 	skin.texture = UnitStats.TEAM_SPRITESHEET[stats.team]
 	skin.coordinates = stats.skin_coordinates
 	skin.flip_h = stats.team == stats.Team.PLAYER
+	detect_range.stats = stats
 	tier_icon.stats = stats
 	health_bar.stats = stats
 	mana_bar.stats = stats

@@ -23,4 +23,4 @@ ability_power = 0
 attack_speed = 0.8
 armor = 1
 magic_resist = 0
-attack_range = 0
+attack_range = 1
