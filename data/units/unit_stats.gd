@@ -15,8 +15,8 @@ const RARITY_COLORS := {
 }
 
 const TARGET := {
-	Team.PLAYER: "enemy units",
-	Team.ENEMY: "player_untis"
+	Team.PLAYER: "enemy_units",
+	Team.ENEMY: "player_units"
 }
 
 const TEAM_SPRITESHEET := {
