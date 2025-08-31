@@ -4,11 +4,17 @@ extends Area2D
 @export var stats: UnitStats: set = _set_stats
 
 @onready var skin : PackedSprite2D = $Skin
+@onready var hurt_box = $HurtBox
 @onready var health_bar := $HealthBar
 @onready var mana_bar := $ManaBar
 @onready var tier_icon := $TierIcon
 @onready var unit_ai = $UnitAI
 @onready var animation_player := $AnimationPlayer
+
+
+func _ready():
+	hurt_box.hurt.connect(_on_hurt)
+
 
 func _set_stats(value: UnitStats):
 	stats = value
@@ -18,6 +24,8 @@ func _set_stats(value: UnitStats):
 
 	stats = value.duplicate()
 	collision_layer = stats.team + 1
+	hurt_box.collision_layer = stats.team + 1
+	hurt_box.collision_mask = 2 - stats.team
 	
 	skin.texture = UnitStats.TEAM_SPRITESHEET[stats.team]
 	skin.coordinates = stats.skin_coordinates
@@ -25,3 +33,8 @@ func _set_stats(value: UnitStats):
 	tier_icon.stats = stats
 	health_bar.stats = stats
 	mana_bar.stats = stats
+	stats.health_reached_zero.connect(queue_free)
+
+
+func _on_hurt(damage: int):
+	stats.health -= damage
