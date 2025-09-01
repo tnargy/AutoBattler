@@ -44,7 +44,7 @@ const ROLL_CHANGES := {
 		gold = value
 		emit_changed()
 @export_range(0, 99) var xp: int : set = _set_xp
-@export_range(1, 10) var level: int:
+@export_range(1, MAX_LEVEL) var level: int:
 	set(value):
 		level = value
 		emit_changed()
@@ -62,12 +62,12 @@ func _set_xp(value: int):
 	xp = value
 	emit_changed()
 
-	if level == 10:
+	if is_max_level():
 		return
 
 	var xp_requirement: int = get_current_xp_requirements()
 
-	while level< 10 and xp >= xp_requirement:
+	while not is_max_level() and xp >= xp_requirement:
 		level += 1
 		xp -= xp_requirement
 		xp_requirement = get_current_xp_requirements()
@@ -75,5 +75,9 @@ func _set_xp(value: int):
 
 
 func get_current_xp_requirements() -> int:
-	var next_level = clamp(level+1, 1, 10)
+	var next_level = clamp(level+1, 1, MAX_LEVEL)
 	return XP_REQUIREMENTS[next_level]
+
+
+func is_max_level() -> bool:
+	return level == MAX_LEVEL

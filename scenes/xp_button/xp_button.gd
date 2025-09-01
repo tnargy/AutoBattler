@@ -14,10 +14,9 @@ func _ready():
 
 func _on_player_stats_changed():
 	var has_enough_gold := player_stats.gold >= 4
-	var max_level := player_stats.level == PlayerStats.MAX_LEVEL
-	disabled = not has_enough_gold or max_level
+	disabled = not has_enough_gold or player_stats.is_max_level()
 
-	if has_enough_gold and not max_level:
+	if has_enough_gold and not player_stats.is_max_level():
 		vbox_container.modulate.a = 1.0
 	else:
 		vbox_container.modulate.a = 0.5
