@@ -10,6 +10,7 @@ extends Area2D
 @onready var mana_bar := $ManaBar
 @onready var tier_icon := $TierIcon
 @onready var flip_sprite = $FlipSprite
+@onready var melee_attack = $MeleeAttack
 @onready var target_finder = $TargetFinder
 @onready var unit_ai = $UnitAI
 @onready var animation_player := $AnimationPlayer
@@ -33,6 +34,9 @@ func _set_stats(value: UnitStats):
 	skin.texture = UnitStats.TEAM_SPRITESHEET[stats.team]
 	skin.coordinates = stats.skin_coordinates
 	skin.flip_h = stats.team == stats.Team.PLAYER
+	
+	melee_attack.spawner.scene = stats.melee_attack
+	
 	detect_range.stats = stats
 	tier_icon.stats = stats
 	health_bar.stats = stats
