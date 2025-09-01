@@ -16,8 +16,8 @@ func _ready():
 	var units := get_tree().get_nodes_in_group("units")
 	for unit: Unit in units:
 		setup_unit(unit)
-		
-		
+
+
 func setup_unit(unit: Unit):
 	unit.drag_and_drop.dropped.connect(_on_unit_dropped.bind(unit))
 	unit.quick_sell_pressed.connect(_sell_unit.bind(unit))
