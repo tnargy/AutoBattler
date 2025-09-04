@@ -12,6 +12,7 @@ extends Area2D
 @onready var attack_timer = $AttackTimer
 @onready var flip_sprite = $FlipSprite
 @onready var melee_attack = $MeleeAttack
+@onready var range_attack = $RangeAttack
 @onready var target_finder = $TargetFinder
 @onready var unit_ai = $UnitAI
 @onready var animation_player := $AnimationPlayer
@@ -28,15 +29,16 @@ func _set_stats(value: UnitStats):
 		return
 
 	stats = value.duplicate()
-	collision_layer = stats.team + 1
-	hurt_box.collision_layer = stats.team + 1
-	hurt_box.collision_mask = 2 - stats.team
+	collision_layer = stats.get_team_collision_layer()
+	hurt_box.collision_layer = stats.get_team_collision_layer()
+	hurt_box.collision_mask = stats.get_team_collision_mask()
 	
 	skin.texture = UnitStats.TEAM_SPRITESHEET[stats.team]
 	skin.coordinates = stats.skin_coordinates
 	skin.flip_h = stats.team == stats.Team.PLAYER
 	
 	melee_attack.spawner.scene = stats.melee_attack
+	range_attack.spawner.scene = stats.ranged_attack
 	
 	detect_range.stats = stats
 	tier_icon.stats = stats
