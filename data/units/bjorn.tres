@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="UnitStats" load_steps=11 format=3 uid="uid://c74vpd2ke8rg2"]
+[gd_resource type="Resource" script_class="UnitStats" load_steps=12 format=3 uid="uid://c74vpd2ke8rg2"]
 
 [ext_resource type="Script" uid="uid://dy0q8tyj60kkr" path="res://data/units/unit_stats.gd" id="1_ibj15"]
 [ext_resource type="AudioStream" uid="uid://d0b3rv8evjvr0" path="res://assets/sfx/bjorn_1.ogg" id="1_poga5"]
+[ext_resource type="PackedScene" uid="uid://phtucwo17ux5" path="res://scenes/_abilities/bjorn_swing.tscn" id="1_y5alr"]
 [ext_resource type="Script" uid="uid://buff8hoouds8d" path="res://data/traits/trait.gd" id="2_r554s"]
 [ext_resource type="AudioStream" uid="uid://disox6o7qxsgi" path="res://assets/sfx/bjorn_2.ogg" id="2_y5alr"]
 [ext_resource type="Resource" uid="uid://c8xbky2qfvwou" path="res://data/traits/fighter.tres" id="3_bglh2"]
@@ -39,4 +40,5 @@ armor = 0
 magic_resist = 0
 attack_range = 1
 melee_attack = ExtResource("5_66cgf")
+ability = ExtResource("1_y5alr")
 auto_attack_sound = SubResource("AudioStreamRandomizer_bk82h")

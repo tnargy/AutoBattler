@@ -7,7 +7,7 @@ extends UnitAbility
 
 
 func use():
-	var all_enemies := get_tree().get_node_count_in_group(UnitStats.TARGET[caster.stats.team])
+	var all_enemies := get_tree().get_nodes_in_group(UnitStats.TARGET[caster.stats.team])
 	var tween := caster.create_tween()
 
 	for _i in extra_shots_per_tier[caster.stats.tier-1]:
