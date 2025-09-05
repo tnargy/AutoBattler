@@ -249,6 +249,10 @@ horizontal_alignment = 1
 [node name="AttackTimer" type="Timer" parent="."]
 process_callback = 0
 
+[node name="AbilitySpawner" type="Node" parent="."]
+script = ExtResource("12_w8xno")
+metadata/_custom_type_script = "uid://cwhglnpmvhdy8"
+
 [node name="FlipSprite" type="Node" parent="." node_paths=PackedStringArray("sprite")]
 script = ExtResource("10_euuyt")
 sprite = NodePath("../Skin")
